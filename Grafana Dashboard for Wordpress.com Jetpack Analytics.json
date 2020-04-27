@@ -65,7 +65,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1587950499209,
+  "iteration": 1587950499212,
   "links": [],
   "panels": [
     {
@@ -2436,7 +2436,7 @@
         {
           "decimals": 0,
           "format": "locale",
-          "label": "Last 30 Days",
+          "label": "Last 10 Years",
           "logBase": 1,
           "max": null,
           "min": "0",
@@ -2566,5 +2566,5 @@
   "timezone": "",
   "title": "Grafana Dashboard for Wordpress.com Jetpack Analytics",
   "uid": "QRe4_q3Zk",
-  "version": 9
+  "version": 10
 }
