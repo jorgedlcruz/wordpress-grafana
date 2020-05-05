@@ -57,7 +57,7 @@ WPAPIStatsURL=$(curl -X GET --header "Accept:application/json" --header 'Authori
 ##
 WPAPIDays="30"
 WPAPIURL="https://public-api.wordpress.com/rest/v1.1/sites/$WPSiteURL/stats?unit=day&quantity=$WPAPIDays&http_envelope=1&"
-WPAPIDailyStatsURL=$(curl -X GET --header "Accept:application/json" --header "Authorization:Bearer $WPAuthBearer" "$WPAPIURL" 2>&1 -k --silent)
+WPAPIDailyStatsURL=$(curl -X GET --header "Accept:application/json" --header 'Authorization:Bearer $WPAuthBearer' "$WPAPIURL" 2>&1 -k --silent)
 
 declare -i arraydaily=0
 for row in $(echo "$WPAPIDailyStatsURL" | jq -r '.body.visits.data[][1]'); do
@@ -77,7 +77,7 @@ done
 ##
 WPAPIMonths="30"
 WPAPIURL="https://public-api.wordpress.com/rest/v1.1/sites/$WPSiteURL/stats/visits?unit=month&quantity=$WPAPIMonths&http_envelope=1&"
-WPAPIMonthlyStatsURL=$(curl -X GET --header "Accept:application/json" --header "Authorization:Bearer $WPAuthBearer" "$WPAPIURL" 2>&1 -k --silent)
+WPAPIMonthlyStatsURL=$(curl -X GET --header "Accept:application/json" --header 'Authorization:Bearer $WPAuthBearer' "$WPAPIURL" 2>&1 -k --silent)
 
 declare -i arraymonthly=0
 for row in $(echo "$WPAPIMonthlyStatsURL" | jq -r '.body.data[][1]'); do
@@ -97,7 +97,7 @@ done
 ##
 WPAPIYears="10"
 WPAPIURL="https://public-api.wordpress.com/rest/v1.1/sites/$WPSiteURL/stats/visits?unit=year&quantity=$WPAPIYears&http_envelope=1&"
-WPAPIYearlyStatsURL=$(curl -X GET --header "Accept:application/json" --header "Authorization:Bearer $WPAuthBearer" "$WPAPIURL" 2>&1 -k --silent)
+WPAPIYearlyStatsURL=$(curl -X GET --header "Accept:application/json" --header 'Authorization:Bearer $WPAuthBearer' "$WPAPIURL" 2>&1 -k --silent)
 
 declare -i arrayyearly=0
 for row in $(echo "$WPAPIYearlyStatsURL" | jq -r '.body.data[][1]'); do
@@ -116,7 +116,7 @@ done
 # Wordpress.com Jetpack Current Year Per Country Stats - Default Query to obtain current year visits per Country
 ##
 WPAPIURL="https://public-api.wordpress.com/rest/v1.1/sites/$WPSiteURL/stats/country-views?period=year&http_envelope=1&"
-WPAPIYearlyCountry=$(curl -X GET --header "Accept:application/json" --header "Authorization:Bearer $WPAuthBearer" "$WPAPIURL" 2>&1 -k --silent)
+WPAPIYearlyCountry=$(curl -X GET --header "Accept:application/json" --header 'Authorization:Bearer $WPAuthBearer' "$WPAPIURL" 2>&1 -k --silent)
 
 WPAPICurrentYear=$(date +%Y)
 WPAPICurrentYearDate="-01-01"
