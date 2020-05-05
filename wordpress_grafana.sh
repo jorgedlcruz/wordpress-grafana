@@ -35,7 +35,7 @@ WPAuthBearer="YOURAUTHCODE"
 # Wordpress.com Jetpack Stats - Default Query to obtain general information about our Site
 ##
 WPAPIURL="https://public-api.wordpress.com/rest/v1.1/sites/$WPSiteURL/stats?http_envelope=1&"
-WPAPIStatsURL=$(curl -X GET --header "Accept:application/json" --header "Authorization:Bearer $WPAuthBearer" "$WPAPIURL" 2>&1 -k --silent)
+WPAPIStatsURL=$(curl -X GET --header "Accept:application/json" --header 'Authorization:Bearer $WPAuthBearer' "$WPAPIURL" 2>&1 -k --silent)
 
     WPAPIStatsTotalVisitors=$(echo "$WPAPIStatsURL" | jq --raw-output ".body.stats.visitors")
     WPAPIStatsTotalViews=$(echo "$WPAPIStatsURL" | jq --raw-output ".body.stats.views")        
