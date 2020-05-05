@@ -25,7 +25,7 @@ InfluxDBURL="YOURINFLUXSERVERIP" #Your InfluxDB Server, http://FQDN or https://F
 InfluxDBPort="8086" #Default Port
 InfluxDB="telegraf" #Default Database
 InfluxDBUser="USER" #User for Database
-InfluxDBPassword="PASSWORD" #Password for Database
+InfluxDBPassword="PASSWORD" #Password for Database - Remove this from the script if you do not have password (not recommended)
 
 # Endpoint URL for login action
 WPSiteURL="YOURSITE"
